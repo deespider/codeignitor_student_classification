@@ -16,7 +16,7 @@
     </header>
     <div class="container py-5 h-100">  
       <div class="card align-items-center">
-        <div class="card-body login-card-body">
+        <div class="card-body login-card-body ">
           <p class="login-box-msg">Login to Proceed</p> 
             <form method="post" action="<?php echo base_url(); ?>main/login_validation">  
                   <div class="form-group mb-3">  

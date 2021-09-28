@@ -15,9 +15,25 @@ class Main extends CI_Controller {
 		$this->load->view("home_page");
 	}
 
+     public function addschool(){
+          $this->load->model("main_model");
+          $data["fetch_data"] = $this->main_model->fetch_data();
+          $this->load->view("insert_data");
+     }
+
+     public function dashboard(){
+          $this->load->model("main_model");
+          $this->load->view("dashboard");
+          // if($this->input->post("add_school"))  
+		// 	   {  
+          //           $this->load->helper('url'); 
+		// 		redirect(base_url() . "main/inserted");  
+		// 	   }
+     }
+
 	public function login()
 	{
-		$this->load->view("login");
+		$this->load->view("home_page");
 	}
 
 
@@ -40,7 +56,9 @@ class Main extends CI_Controller {
                           'username'     =>     $username  
                      );  
                      $this->session->set_userdata($session_data);  
-                     redirect(base_url() . 'main/enter');  
+                     redirect(base_url() . 'main/enter');
+                    //  $this->load->helper('url');
+                    //  $this->load->model('addschool','',TRUE);
                 }  
                 else  
                 {  
@@ -57,10 +75,11 @@ class Main extends CI_Controller {
       function enter(){  
            if($this->session->userdata('username') != '')  
            {  
-                echo '<h2>Welcome - '.$this->session->userdata('username').'</h2>';  
-                echo '<label><a href="'.base_url
-
-	().'main/logout">Logout</a></label>';  
+               $this->load->helper('url');
+               redirect(base_url(). 'main/dashboard');
+               echo '<h2>Welcome - '.$this->session->userdata('username').'</h2>';  
+               echo '<label><a href="'.base_url().'main/logout">Logout</a></label>'; 
+               //  redirect(base_url() . 'main/addschool'); 
            }  
            else  
            {  
@@ -143,4 +162,14 @@ class Main extends CI_Controller {
       {  
            $this->index();  
       } 
+
+
+     public function view_entry(){
+
+     }
+
+     public function add_entry(){
+          
+     }
 }
+

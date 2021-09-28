@@ -1,5 +1,7 @@
 
-## Interview assignment
+# Interview assignment
+
+## Login username-"admin@wb" password- "1234"
 
 Create an application using php, codeigniter 3, jquery, mysql/postgres,bootstrap for school to capture 
 the student classification details such as number of students in different social categories and number 

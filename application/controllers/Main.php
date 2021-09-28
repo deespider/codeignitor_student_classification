@@ -169,7 +169,8 @@ class Main extends CI_Controller {
      }
 
      public function add_entry(){
-          
+          $this->load->model("main_model");
+          $this->load->view("insert_student");
      }
 }
 
